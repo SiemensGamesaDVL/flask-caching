@@ -92,6 +92,10 @@ class RedisCache(BaseCache):
         db_number = config.get("CACHE_REDIS_DB")
         if db_number:
             kwargs["db"] = db_number
+            
+        ssl = config.get("CACHE_REDIS_SSL")
+        if ssl:
+            kwargs["ssl"] = ssl
 
         redis_url = config.get("CACHE_REDIS_URL")
         if redis_url:
